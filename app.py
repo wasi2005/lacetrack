@@ -12,7 +12,7 @@
  # | | | '_ ` _ \  | '_ \   / _ \  | '__| | __| / __|
  # | | | | | | | | | |_) | | (_) | | |    | |_  \__ \
  # |_| |_| |_| |_| | .__/   \___/  |_|     \__| |___/
- #                 |_|                               
+ #                 |_|
 
 import json
 import os
@@ -62,6 +62,7 @@ def load_user(user_id):
  # |_|     \___/   \__,_|  \__|  \___| |___/
 
 
+# When someone goes to lace-track.herokuapp.com/ --> index() gets executed
 @app.route('/')
 def index():
     return render_template("index.html")
