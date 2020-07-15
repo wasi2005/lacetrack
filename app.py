@@ -29,7 +29,7 @@ from oauthlib.oauth2 import WebApplicationClient
 import requests
 
 # Internal Imports
-from database import init_db_command
+from database import get_users
 from models import User
 
  #                          __   _
@@ -55,6 +55,9 @@ client = WebApplicationClient(GOOGLE_CLIENT_ID)
 def load_user(user_id):
     return User.get(user_id)
 
+def get_google_provider_cfg():
+    return requests.get(GOOGLE_DISCOVERY_URL).json()
+
  #                         _
  #  _ __    ___    _   _  | |_    ___   ___
  # | '__|  / _ \  | | | | | __|  / _ \ / __|
@@ -62,7 +65,6 @@ def load_user(user_id):
  # |_|     \___/   \__,_|  \__|  \___| |___/
 
 
-# When someone goes to lace-track.herokuapp.com/ --> index() gets executed
 @app.route('/')
 def index():
     return render_template("index.html")
@@ -82,8 +84,6 @@ def portal():
         return '<a class="button" href="/login">Google Login</a>'
 
 @app.route("/login")
-def get_google_provider_cfg():
-    return requests.get(GOOGLE_DISCOVERY_URL).json()
 def login():
     # Find out what URL to hit for Google login
     google_provider_cfg = get_google_provider_cfg()
@@ -98,9 +98,17 @@ def login():
     )
     return redirect(request_uri)
 
+# lace-track.herokuapp.com/login
+# auth.google.com/authorization_endpoint?scope=openid&scope=email&scope=profile&redirect_uri=lace-track.herokuapp.com/login/callback
+# lace-track.herokuapp.com/login/callback?code=3838388
+# auth.google.com/token_endpoint?redirect_url=lace-track.herokuapp.com/login/callback&code=3838388&authorization_response=lace-track.herokuapp.com/login/callback?code=3838388
+# lace-track.herokuapp.com/login/callback?token_openid=kdnhkjfghZdfkjgxkd&token_email=kdnhkjfghZdfkjgxkd&token_profile=fijfjfjiijf
+# auth.google.com/userinfo_endpoint?token_openid=kdnhkjfghZdfkjgxkd&token_email=kdnhkjfghZdfkjgxkd&token_profile=fijfjfjiijf
+# lace-track.herokuapp.com/login/callback?sub=657&email=wasi.shams.ahmed@gmail.com&picture=wasi.jpeg&users_name=wahmed937
+
 @app.route("/login/callback")
 def callback():
-    # Get authorization code Google sent back to you
+    # Get authorization code Google sent back to you //
     code = request.args.get("code")
 
     # Find out what URL to hit to get tokens that allow you to ask for
@@ -111,9 +119,9 @@ def callback():
     # Prepare and send a request to get tokens! Yay tokens!
     token_url, headers, body = client.prepare_token_request(
         token_endpoint,
-        authorization_response=request.url,
-        redirect_url=request.base_url,
-        code=code
+        authorization_response = request.url,
+        redirect_url = request.base_url,
+        code = code
     )
 
     token_response = requests.post(
@@ -147,7 +155,10 @@ def callback():
     # Create a user in your db with the information provided
     # by Google
     user = User(
-        id_=unique_id, name=users_name, email=users_email, profile_pic=picture
+        id = unique_id,
+        name = users_name,
+        email = users_email,
+        profile_pic = picture
     )
 
     # Doesn't exist? Add it to the database.
@@ -158,7 +169,7 @@ def callback():
     login_user(user)
 
     # Send user back to homepage
-    return redirect(url_for("index"))
+    return redirect(url_for("portal"))
 
 @app.route("/logout")
 @login_required
