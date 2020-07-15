@@ -53,7 +53,7 @@ client = WebApplicationClient(GOOGLE_CLIENT_ID)
 
 @login_manager.user_loader
 def load_user(user_id):
-    return User.get_id(user_id)
+    return User.get(user_id)
 
 def get_google_provider_cfg():
     return requests.get(GOOGLE_DISCOVERY_URL).json()
@@ -155,14 +155,14 @@ def callback():
     # Create a user in your db with the information provided
     # by Google
     user = User(
-        id = unique_id,
+        id_ = unique_id,
         name = users_name,
         email = users_email,
         profile_pic = picture
     )
 
     # Doesn't exist? Add it to the database.
-    if not User.get_id(unique_id):
+    if not User.get(unique_id):
         User.create(unique_id, users_name, users_email, picture)
 
     # Begin user session by logging the user in

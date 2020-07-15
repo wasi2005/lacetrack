@@ -2,8 +2,8 @@ from flask_login import UserMixin
 from database import get_users
 
 class User(UserMixin):
-    def __init__(self, id, name, email, profile_pic):
-        self.id = id
+    def __init__(self, id_, name, email, profile_pic):
+        self.id = id_
         self.name = name
         self.email = email
         self.profile_pic = profile_pic
@@ -17,10 +17,10 @@ class User(UserMixin):
         }
 
     @staticmethod
-    def get_id(user_id):
+    def get(user_id):
         user_dict = get_users().document(user_id).get().to_dict()
-        if user_dict == None:
-            return False
+        if not user_dict:
+            return None
         user = User(user_id, user_dict["name"], user_dict["email"], user_dict['profile_pic'])
         return user
 
