@@ -28,4 +28,4 @@ class User(UserMixin):
     @staticmethod
     def create(id_, name, email, profile_pic):
         users_ref = get_users()
-        users_ref.document().set(User(id_, name, email, profile_pic).to_dict())
+        users_ref.document(id_).set(User(id_, name, email, profile_pic).to_dict())
