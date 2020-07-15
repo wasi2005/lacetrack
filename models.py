@@ -18,7 +18,7 @@ class User(UserMixin):
 
     @staticmethod
     def get(id):
-        user_dict = get_users().document(id).to_dict()
+        user_dict = get_users().document(id).get().to_dict()
         user = User(id, user_dict["name"], user_dict["email"], user_dict['profile_pic'])
         return user
 
