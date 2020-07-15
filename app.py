@@ -44,7 +44,7 @@ GOOGLE_CLIENT_SECRET = os.environ.get("GOOGLE_CLIENT_SECRET", None)
 GOOGLE_DISCOVERY_URL = ("https://accounts.google.com/.well-known/openid-configuration")
 
 app = Flask(__name__)
-app.secret_key = os.urandom(24)
+app.secret_key = b'\x0c\xc2\xd8\xa4\x7f\x82\x1e\x0f\x177\xf6\xfa\xc3\x91\xc7j\xe3L\xa2\x9c\xc7\x9aK\xc0'
 
 login_manager = LoginManager()
 login_manager.init_app(app)
