@@ -10,3 +10,4 @@ requests==2.23.0
 oauthlib==3.1.0
 pyOpenSSL==19.1.0
 Flask-Login==0.5.0
+firebase_admin==4.3.0
