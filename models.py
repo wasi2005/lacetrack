@@ -17,13 +17,12 @@ class User(UserMixin):
         }
 
     @staticmethod
-    def get_id(id):
+    def get_id(user_id):
         user_dict = get_users().document(id).get().to_dict()
         if user_dict == None:
             return False
-        user = User(id, user_dict["name"], user_dict["email"], user_dict['profile_pic'])
+        user = User(user_id, user_dict["name"], user_dict["email"], user_dict['profile_pic'])
         return user
-
 
     @staticmethod
     def create(id, name, email, profile_pic):
