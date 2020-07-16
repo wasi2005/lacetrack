@@ -18,8 +18,7 @@
 	<link rel="icon" type="image/png" href="{{url_for('static',filename='images/logo.svg')}}">
 
 	<link rel="stylesheet" href="{{url_for('static',filename='css/style.min.css')}}">
-	<script src="{{url_for('static',filename='js/modernizr.js')}}"></script>
-
+	<script src="{{ url_for('static',filename='js/modernizr.js') }}"></script>
 </head>
 
 <body class="js-preload-me">
@@ -56,7 +55,12 @@
 						<!-- Menu -->
 						<nav class="right helper">
 							<ul class="menu sf-menu js-menu">
-								<li><a href="/portal">Portal</a></li>
+								{% if user.is_authenticated %}
+									<li><a href="/portal">Portal</a></li>
+									<li><a href="/logout">Logout</a></li>
+								{% else %}
+									<li><a href="/login">Login</a></li>
+								{% endif %}
 							</ul>
 						</nav>
 						<!-- End of Menu -->
