@@ -62,7 +62,7 @@ def index():
 
 @app.route("/portal")
 def portal():
-    return render_template("portal.html")
+    return render_template("portal.html", user = current_user)
 
 @app.route("/login")
 def login():
