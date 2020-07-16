@@ -26716,6 +26716,7 @@ dl li {
 }
 
 .preview-list .preview-item .preview-item-content {
+    color: white;
     line-height: 1;
     padding-left: 15px;
 }
