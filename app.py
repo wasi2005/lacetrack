@@ -55,14 +55,16 @@ def get_google_provider_cfg():
  # | |    | (_) | | |_| | | |_  |  __/ \__ \
  # |_|     \___/   \__,_|  \__|  \___| |___/
 
-
 @app.route('/')
 def index():
     return render_template("index.html", user = current_user)
 
 @app.route("/portal")
 def portal():
-    return render_template("portal.html", user = current_user)
+    if current_user.is_authenticated:
+        return render_template("portal.html", user = current_user)
+    else:
+        return redirect('/')
 
 @app.route("/login")
 def login():

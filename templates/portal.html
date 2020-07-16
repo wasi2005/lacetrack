@@ -84,7 +84,7 @@
               </a>
             </div>
           </li>
-          <li class="nav-item nav-profile dropdown"> <a class="nav-link" href="#" data-toggle="dropdown" id="profileDropdown"> <img src="{{url_for('static',filename='images/faces/face28.jpg')}}" alt="profile" /> </a>
+          <li class="nav-item nav-profile dropdown"> <a class="nav-link" href="#" data-toggle="dropdown" id="profileDropdown"> <img src="{{ user.profile_pic }}" alt="profile" /> </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown"> <a class="dropdown-item"> <i class="ti-settings text-primary"></i> Settings </a> <a class="dropdown-item"> <i
                   class="ti-power-off text-primary"></i> Logout </a> </div>
           </li>
@@ -350,7 +350,7 @@
             <div class="col-md-12 grid-margin">
               <div class="row">
                 <div class="col-12 col-xl-5 mb-4 mb-xl-0">
-                  <h4 class="font-weight-normal" style="font-size: 20px;">Hi, {{ user.name }}!</h4>
+                  <h4 class="font-weight-normal" style="font-size: 50px;">Hi, {{ user.name }}!</h4>
                 </div>
                 <div class="col-12 col-xl-7">
                   <div class="d-flex align-items-center justify-content-between flex-wrap">
