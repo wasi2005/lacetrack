@@ -127,17 +127,17 @@ def callback():
         return "User email not available or not verified by Google.", 400
 
     google_user = User(
-        id_ = unique_id,
+        id = unique_id,
         name = users_name,
         email = users_email,
         profile_pic = picture,
         inventory = []
     )
 
-    lacetrack_user = User.get(google_user.id_)
+    lacetrack_user = User.get(google_user.id)
 
     if lacetrack_user == None:
-        User.create(google_user.id_, google_user.name, google_user.email, google_user.profile_pic, google_user.inventory)
+        User.create(google_user.id, google_user.name, google_user.email, google_user.profile_pic, google_user.inventory)
 
     login_user(lacetrack_user)
 
