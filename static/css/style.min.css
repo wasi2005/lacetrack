@@ -11277,7 +11277,7 @@ select[multiple].input-group-sm>.form-control, select[multiple].input-group-sm>.
 
 .page-title {
   font-size: 5em;
-  color: #1a1a1a;
+  color: white;
   font-weight: 100;
   margin-bottom: 30px
 }
@@ -11293,7 +11293,7 @@ select[multiple].input-group-sm>.form-control, select[multiple].input-group-sm>.
 }
 
 .page-description {
-  color: #1a1a1a;
+  color: white;
   text-transform: uppercase;
   font-size: 1.25em;
   letter-spacing: 2px;
