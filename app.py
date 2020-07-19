@@ -1,3 +1,4 @@
+
  #  _                                      _
  # (_)  _ __ ___    _ __     ___    _ __  | |_   ___
  # | | | '_ ` _ \  | '_ \   / _ \  | '__| | __| / __|
@@ -125,17 +126,20 @@ def callback():
     else:
         return "User email not available or not verified by Google.", 400
 
-    user = User(
+    google_user = User(
         id_ = unique_id,
         name = users_name,
         email = users_email,
-        profile_pic = picture
+        profile_pic = picture,
+        inventory = []
     )
 
-    if not User.get(unique_id):
-        User.create(unique_id, users_name, users_email, picture)
+    lacetrack_user = User.get(google_user.id_)
 
-    login_user(user)
+    if lacetrack_user == None:
+        User.create(google_user.id_, google_user.name, google_user.email, google_user.profile_pic, google_user.inventory)
+
+    login_user(lacetrack_user)
 
     return redirect(url_for("portal"))
 
