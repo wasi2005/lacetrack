@@ -1596,7 +1596,7 @@ body, html {
 
 body {
   font-size: 1em;
-  color: #333
+  color: white
 }
 
 #content {
@@ -10519,7 +10519,7 @@ select[multiple].input-group-sm>.form-control, select[multiple].input-group-sm>.
   display: block;
   line-height: 1;
   padding: 10px 15px;
-  color: inherit
+  color: white
 }
 
 .menu>li {
