@@ -20,7 +20,7 @@ class User(UserMixin):
 
     def get(user_id):
         user_dict = get_users().document(user_id).get().to_dict()
-        if not user_dict:
+        if user_dict == None:
             return None
         user = User(user_id, user_dict["name"], user_dict["email"], user_dict['profile_pic'], user_dict['inventory'])
         return user
