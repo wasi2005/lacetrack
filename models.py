@@ -29,9 +29,10 @@ class User(UserMixin):
         return user
 
     @staticmethod
-    def create(id, name, email, profile_pic, inventory):
+    def create(google_user):
         users_ref = get_users()
-        users_ref.document(id).set(User(id, name, email, profile_pic, inventory).to_dict())
+        users_ref.document(id).set(google_user).to_dict())
+        return google_user
 
 class Shoe(object):
     def __init__(self, shoe_name, quantity, purchase_price, size):

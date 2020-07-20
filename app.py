@@ -134,10 +134,12 @@ def callback():
         inventory = []
     )
 
+    # Test Case 1: you already have a lacetrack account
+    # Test Case 2: you don't have a lacetrack account yet
     lacetrack_user = User.get(google_user.id)
 
     if lacetrack_user == None:
-        User.create(google_user.id, google_user.name, google_user.email, google_user.profile_pic, google_user.inventory)
+        lacetrack_user = User.create(google_user)
 
     login_user(lacetrack_user)
 
