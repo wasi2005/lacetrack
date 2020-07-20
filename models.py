@@ -18,11 +18,14 @@ class User(UserMixin):
             'inventory' : self.inventory
         }
 
+    def parse_inventory(inventory):
+        return [Shoe.from_dict(shoe_dict) for shoe_dict in inventory]
+
     def get(user_id):
         user_dict = get_users().document(user_id).get().to_dict()
         if user_dict == None:
             return None
-        user = User(user_id, user_dict["name"], user_dict["email"], user_dict['profile_pic'], user_dict['inventory'])
+        user = User(user_id, user_dict["name"], user_dict["email"], user_dict['profile_pic'], parse_inventory(user_dict['inventory']))
         return user
 
     @staticmethod
@@ -31,12 +34,12 @@ class User(UserMixin):
         users_ref.document(id).set(User(id, name, email, profile_pic, inventory).to_dict())
 
 class Shoe(object):
-    def __init__(self, shoe_name, quantity, purchase_price, size, breakeven_price):
+    def __init__(self, shoe_name, quantity, purchase_price, size):
         self.shoe_name = shoe_name
         self.quantity = quantity
         self.purchase_price = purchase_price
         self.size = size
-        self.breakeven_price = breakeven_price
+
 
     def to_dict(self):
         return {
@@ -44,9 +47,8 @@ class Shoe(object):
             'quantity' : self.quantity,
             'purchase_price' : self.purchase_price,
             'size' : self.size,
-            'breakeven_price' : self.breakeven_price
         }
 
     def from_dict(shoe_dict):
-        shoe = Shoe(self.shoe_name, self.quantity, self.purchase_price, self.size, self.breakeven_price)
+        shoe = Shoe(shoe['shoe_name'], shoe_dict['quantity'], shoe_dict['purchase_price'], shoe_dict['size'])
         return shoe
