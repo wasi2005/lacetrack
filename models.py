@@ -25,7 +25,7 @@ class User(UserMixin):
         user_dict = get_users().document(user_id).get().to_dict()
         if user_dict == None:
             return None
-        user = User(user_id, user_dict["name"], user_dict["email"], user_dict['profile_pic'], parse_inventory(user_dict['inventory']))
+        user = User(user_id, user_dict["name"], user_dict["email"], user_dict['profile_pic'], User.parse_inventory(user_dict['inventory']))
         return user
 
     @staticmethod
