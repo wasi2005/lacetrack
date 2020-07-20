@@ -134,8 +134,6 @@ def callback():
         inventory = []
     )
 
-    # Test Case 1: you already have a lacetrack account
-    # Test Case 2: you don't have a lacetrack account yet
     lacetrack_user = User.get(google_user.id)
 
     if lacetrack_user == None:
