@@ -31,8 +31,7 @@ class User(UserMixin):
     @staticmethod
     def create(google_user):
         users_ref = get_users()
-        print(google_user.to_dict())
-        users_ref.document(id).set(google_user.to_dict())
+        users_ref.document(google_user.id).set(google_user.to_dict())
         return google_user
 
 class Shoe(object):
