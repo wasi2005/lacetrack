@@ -618,7 +618,7 @@
                         {% for shoe in user.inventory %}
                           <tr>
                             <td>{{ shoe.name }}</td>
-                            <td class="font-weight-bold">{{ shoe.price_bought}}</td>
+                            <td class="font-weight-bold">${{ shoe.price_bought }}</td>
                             <td>{{ shoe.date_bought}</td>
                             {% if shoe.status == "0" %}
                               <td class="font-weight-medium text-success">Open</td>
