@@ -35,21 +35,27 @@ class User(UserMixin):
         return google_user
 
 class Shoe(object):
-    def __init__(self, shoe_name, quantity, purchase_price, size):
-        self.shoe_name = shoe_name
-        self.quantity = quantity
-        self.purchase_price = purchase_price
+    def __init__(self, name, size, quantity, price_bought, price_sold, date_bought, date_sold, status):
+        self.name = name
         self.size = size
-
+        self.quantity = quantity
+        self.price_bought = price_bought
+        self.price_sold = price_sold
+        self.date_bought = date_bought
+        self.date_sold = date_sold
+        self.status = status
 
     def to_dict(self):
         return {
-            'shoe_name': self.shoe_name,
-            'quantity' : self.quantity,
-            'purchase_price' : self.purchase_price,
+            'name': self.name,
             'size' : self.size,
+            'quantity' : self.quantity,
+            'price_bought' : self.price_bought,
+            'price_sold' : self.price_sold,
+            'date_bought' : self.date_bought,
+            'date_sold' : self.date_sold,
+            'status' : self.status,
         }
 
     def from_dict(shoe_dict):
-        shoe = Shoe(shoe['shoe_name'], shoe_dict['quantity'], shoe_dict['purchase_price'], shoe_dict['size'])
-        return shoe
+        return Shoe(shoe['name'], shoe_dict['size'], shoe_dict['quantity'], shoe_dict['price_bought'], shoe_dict['price_sold'], shoe_dict['date_bought'], shoe_dict['date_sold'], shoe_dict['status'])
