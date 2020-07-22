@@ -8,9 +8,10 @@
   <link rel="stylesheet" href="{{url_for('static',filename='vendors/ti-icons/css/themify-icons.css')}}">
   <link rel="stylesheet" href="{{url_for('static',filename='vendors/css/vendor.bundle.base.css')}}"> <!-- endinject -->
   <!-- Plugin css for this page -->
+  <link rel="stylesheet" href="{{url_for('static',filename='vendors/bootstrap-datepicker/bootstrap-datepicker.min.css')}}">
   <!-- End plugin css for this page -->
   <!-- inject:css -->
-  <link rel="stylesheet" href="{{url_for('static',filename='css/vertical-layout-dark/style.css')}}"> <!-- endinject -->
+  <link rel="stylesheet" href="{{url_for('static',filename='/vertical-layout-dark/style.css')}}"> <!-- endinject -->
   <link rel="shortcut icon" href="{{url_for('static',filename='images/logo.svg')}}" />
 </head>
 
@@ -197,7 +198,8 @@
         <ul class="nav">
           <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='index.html')}}"> <i class="ti-home menu-icon"></i> <span class="menu-title">Dashboard</span> </a> </li>
           <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/widgets/widgets.html')}}"> <i class="ti-settings menu-icon"></i> <span class="menu-title">Inventory</span> </a> </li>
-          <li class="nav-item"> <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic"> <i class="ti-palette menu-icon"></i> <span class="menu-title">Tracking Numbers</span> <i class="menu-arrow"></i>
+          <li class="nav-item"> <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic"> <i class="ti-palette menu-icon"></i> <span class="menu-title">Tracking Numbers</span> <i
+                class="menu-arrow"></i>
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
@@ -215,8 +217,8 @@
               </ul>
             </div>
           </li>
-          <li class="nav-item"> <a class="nav-link" data-toggle="collapse" href="#ui-advanced" aria-expanded="false" aria-controls="ui-advanced"> <i class="ti-view-list menu-icon"></i> <span class="menu-title">Sales</span> <i
-                class="menu-arrow"></i> </a>
+          <li class="nav-item"> <a class="nav-link" data-toggle="collapse" href="#ui-advanced" aria-expanded="false" aria-controls="ui-advanced"> <i class="ti-view-list menu-icon"></i> <span class="menu-title">Sales</span> <i class="menu-arrow"></i>
+            </a>
             <div class="collapse" id="ui-advanced">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/ui-features/dragula.html')}}">Dragula</a></li>
@@ -616,18 +618,18 @@
                       </thead>
                       <tbody>
                         {% for shoe in user.inventory %}
-                          <tr>
-                            <td>{{ shoe.name }}</td>
-                            <td class="font-weight-bold">${{ shoe.price_bought }}</td>
-                            <td>{{ shoe.date_bought }}</td>
-                            {% if shoe.status == "0" %}
-                              <td class="font-weight-medium text-success">Open</td>
-                            {% elif shoe.status == "1" %}
-                              <td class="font-weight-medium text-warning">Pending</td>
-                            {% elif shoe.status == "2" %}
-                              <td class="font-weight-medium text-danger">Sold</td>
-                            {% endif %}
-                          </tr>
+                        <tr>
+                          <td>{{ shoe.name }}</td>
+                          <td class="font-weight-bold">${{ shoe.price_bought }}</td>
+                          <td>{{ shoe.date_bought }}</td>
+                          {% if shoe.status == "0" %}
+                          <td class="font-weight-medium text-success">Open</td>
+                          {% elif shoe.status == "1" %}
+                          <td class="font-weight-medium text-warning">Pending</td>
+                          {% elif shoe.status == "2" %}
+                          <td class="font-weight-medium text-danger">Sold</td>
+                          {% endif %}
+                        </tr>
                         {% endfor %}
                       </tbody>
                     </table>
@@ -1064,6 +1066,14 @@
                       </div>
                     </div>
                   </div>
+                  <div class="form-group">
+                    <div id="datepicker-popup" class="input-group date datepicker">
+                      <input type="text" class="form-control">
+                      <span class="input-group-addon input-group-append border-left">
+                        <span class="ti-calendar input-group-text"></span>
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1144,7 +1154,8 @@
         </div> <!-- content-wrapper ends -->
         <!-- partial:partials/_footer.html -->
         <footer class="footer">
-          <div class="d-sm-flex justify-content-center justify-content-sm-between"> <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2020 <a href="/">LaceTrack</a>. All rights reserved.</span> <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="ti-heart text-danger ml-1"></i></span> </div>
+          <div class="d-sm-flex justify-content-center justify-content-sm-between"> <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2020 <a href="/">LaceTrack</a>. All rights reserved.</span> <span
+              class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="ti-heart text-danger ml-1"></i></span> </div>
         </footer> <!-- partial -->
       </div> <!-- main-panel ends -->
     </div> <!-- page-body-wrapper ends -->
@@ -1152,6 +1163,7 @@
   <!-- plugins:js -->
   <script src="{{url_for('static',filename='vendors/js/vendor.bundle.base.js')}}"></script> <!-- endinject -->
   <!-- Plugin js for this page -->
+  <script src="{{url_for('static',filename='vendors/bootstrap-datepicker/bootstrap-datepicker.min.js')}}"></script>
   <script src="{{url_for('static',filename='vendors/chart.js/Chart.min.js')}}"></script> <!-- End plugin js for this page -->
   <!-- inject:js -->
   <script src="{{url_for('static',filename='js/off-canvas.js')}}"></script>
