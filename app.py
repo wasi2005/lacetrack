@@ -22,7 +22,8 @@ import requests
 
 # Internal Imports
 from database import get_users
-from models import User
+from models import User, Shoe
+
 
  #                          __   _
  #   ___    ___    _ __    / _| (_)   __ _
