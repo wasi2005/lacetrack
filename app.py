@@ -161,5 +161,7 @@ def add_shoe():
     shoe = Shoe(name, size, quantity, price_bought, 0, date_bought, "--/--/--", "0")
     current_user.add_shoe(shoe)
 
+    return redirect(url_for("portal"))
+
 if __name__ == "__main__":
     app.run()
