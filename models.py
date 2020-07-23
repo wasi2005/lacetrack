@@ -15,7 +15,7 @@ class User(UserMixin):
             'name' : self.name,
             'email' : self.email,
             'profile_pic' : self.profile_pic,
-            'inventory' : self.inventory
+            'inventory' : [ shoe.to_dict() for shoe in self.inventory ]
         }
 
     def parse_inventory(inventory):
