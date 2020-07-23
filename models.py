@@ -21,6 +21,11 @@ class User(UserMixin):
     def parse_inventory(inventory):
         return [Shoe.from_dict(shoe_dict) for shoe_dict in inventory]
 
+    def add_shoe(self, shoe):
+        self.inventory.append(shoe)
+        users_ref = get_users()
+        users_ref.document(self.id).set(self.to_dict())
+
     def get(user_id):
         user_dict = get_users().document(user_id).get().to_dict()
         if user_dict == None:

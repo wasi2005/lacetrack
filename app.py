@@ -149,6 +149,17 @@ def logout():
     logout_user()
     return redirect(url_for("index"))
 
+@app.route("/add-shoe", methods=["POST"])
+@login_required
+def add_shoe():
+    name = request.form['name']
+    size = request.form['size']
+    quantity = request.form['quantity']
+    price_bought = request.form['price_bought']
+    date_bought = request.form["date_bought"]
+
+    shoe = Shoe(name, size, quantity, price_bought, 0, date_bought, "--/--/--", "0")
+    current_user.add_shoe(shoe)
 
 if __name__ == "__main__":
     app.run()
