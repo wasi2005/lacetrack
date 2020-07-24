@@ -1100,7 +1100,9 @@
                         </div>
                         <select class="selectpicker">
                           {% for shoe in user.inventory %}
-                            <option>shoe</option>
+                            {% if shoe.status == "0" %}
+                              <option>{{ shoe.name }}</option>
+                            {% endif %}
                           {% endfor %}
                         </select>
                       </div>
