@@ -57,10 +57,12 @@ def get_google_provider_cfg():
  # | |    | (_) | | |_| | | |_  |  __/ \__ \
  # |_|     \___/   \__,_|  \__|  \___| |___/
 
+#return https://lace-track.herokuapp.com/
 @app.route('/')
 def index():
     return render_template("index.html", user = current_user)
 
+#return https://lace-track.herokuapp.com/portal if user is logged in, if not return https://lace-track.herokuapp.com/
 @app.route("/portal")
 def portal():
     if current_user.is_authenticated:
@@ -68,6 +70,7 @@ def portal():
     else:
         return redirect('/')
 
+#on login step store google's information as a dictionary using the get function. key for the auth endpoint and send a request to the auth endpoint asking for user id, profile pic, and email. once prepared send to https://lace-track.herokuapp.com/login/callback
 @app.route("/login")
 def login():
 
@@ -91,6 +94,7 @@ def login():
     )
     return redirect(request_uri)
 
+#get auth code from auth endpoint and send to token endpoint. once u send to token endpoint, google will send you tokens that carry user information. store these tokens in a dictionary with a client and use that client to act as a key to get user info from google. if the google email is verified get the information about the user. store info as google user and use it to login as a lace track user.
 @app.route("/login/callback")
 def callback():
 
@@ -144,12 +148,14 @@ def callback():
 
     return redirect(url_for("portal"))
 
+#simple logout that redirects to homepage/index
 @app.route("/logout")
 @login_required
 def logout():
     logout_user()
     return redirect(url_for("index"))
 
+#after user sends form to add shoe they create a post request to https://lace-track.herokuapp.com/add-shoe. create function to request response from form and store as variable to input in the object shoe. add the shoe to the user
 @app.route("/add-shoe", methods=["POST"])
 @login_required
 def add_shoe():
