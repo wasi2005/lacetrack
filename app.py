@@ -170,5 +170,21 @@ def add_shoe():
 
     return redirect(url_for("portal"))
 
+@app.route("/update-shoe", methods=["POST"])
+@login_required
+def update_shoe():
+
+    shoe_name = request.form['name']
+
+    updated_attributes = {
+        'status' : request.form['status'],
+        'date_sold' : request.form['date_sold'],
+        'price_sold' : request.form['price_sold']
+    }
+
+    current_user.update_shoe(shoe_name, updated_attributes)
+
+    return redirect(url_for("portal"))
+
 if __name__ == "__main__":
     app.run()

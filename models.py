@@ -26,6 +26,16 @@ class User(UserMixin):
         users_ref = get_users()
         users_ref.document(self.id).set(self.to_dict())
 
+    def update_shoe(self, shoe_name, updated_attributes):
+        for shoe in self.inventory:
+            if shoe.name == shoe_name:
+                shoe.status = updated_attributes['status']
+                shoe.date_sold = updated_attributes['date_sold']
+                shoe.price_sold = updated_attributes['price_sold']
+
+                users_ref = get_users()
+                users_ref.document(self.id).set(self.to_dict())
+
     def get(user_id):
         user_dict = get_users().document(user_id).get().to_dict()
         if user_dict == None:
