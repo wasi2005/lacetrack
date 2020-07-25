@@ -178,7 +178,7 @@ def update_shoe():
     x = 10 if a > b else 11
 
     updated_attributes = {
-        'status' : '1' if request.form{'status'} == "Pending" else 'status' : '2',
+        'status' : '1' if request.form['status'] == "Pending" else '2',
         'date_sold' : request.form['date_sold'],
         'price_sold' : request.form['price_sold']
     }
