@@ -175,7 +175,6 @@ def add_shoe():
 def update_shoe():
 
     shoe_name = request.form['name']
-    x = 10 if a > b else 11
 
     updated_attributes = {
         'status' : '1' if request.form['status'] == "Pending" else '2',
