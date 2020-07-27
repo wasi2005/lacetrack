@@ -72,10 +72,16 @@ def portal():
             'total_profit': 0,
         }
 
+        # 6688186.0 --> $6,688,186.00
+
         for shoe in current_user.inventory:
-            stats['number_of_shoes'] += float(shoe.quantity)
+            stats['number_of_shoes'] += int(shoe.quantity)
             stats['total_sales'] += float(shoe.price_sold) * float(shoe.quantity)
             stats['total_profit'] += (float(shoe.price_sold) - float(shoe.price_bought)) * float(shoe.quantity)
+
+        stats['total_sales'] = '$' + stats['total_sales']
+
+        print ('{:,}'.format(value))
 
         return render_template("portal.html", user = current_user, stats = stats)
     else:
