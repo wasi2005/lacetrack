@@ -74,8 +74,8 @@ def portal():
 
         for shoe in current_user.inventory:
             stats['number_of_shoes'] += 1
-            stats['total_sales'] += float(shoe.price_sold)
-            stats['total_profit'] += float(shoe.price_sold) - float(shoe.price_bought)
+            stats['total_sales'] += float(shoe.price_sold) * float(shoe.quantity)
+            stats['total_profit'] += (float(shoe.price_sold) - float(shoe.price_bought)) * float(shoe.quantity)
 
         return render_template("portal.html", user = current_user, stats = stats)
     else:
@@ -175,6 +175,7 @@ def add_shoe():
     quantity = request.form['quantity']
     price_bought = request.form['price_bought']
     date_bought = request.form["date_bought"]
+
 
     shoe = Shoe(name, size, quantity, price_bought, 0, date_bought, "--/--/--", "0")
     current_user.add_shoe(shoe)
