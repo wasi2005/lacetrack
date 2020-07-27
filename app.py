@@ -24,7 +24,6 @@ import requests
 from database import get_users
 from models import User, Shoe
 
-
  #                          __   _
  #   ___    ___    _ __    / _| (_)   __ _
  #  / __|  / _ \  | '_ \  | |_  | |  / _` |
@@ -66,7 +65,19 @@ def index():
 @app.route("/portal")
 def portal():
     if current_user.is_authenticated:
-        return render_template("portal.html", user = current_user)
+
+        stats = {
+            'number_of_shoes' : 0,
+            'total_sales' : 0,
+            'total_profit': 0,
+        }
+
+        for shoe in current_user.inventory:
+            stats['number_of_shoes'] += 1
+            stats['total_sales'] += shoe.price_sold
+            stats['total_profit'] += shoe.price_sold - shoe.price_bought
+
+        return render_template("portal.html", user = current_user, stats = stats)
     else:
         return redirect('/')
 
