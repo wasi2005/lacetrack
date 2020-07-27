@@ -74,8 +74,8 @@ def portal():
 
         for shoe in current_user.inventory:
             stats['number_of_shoes'] += 1
-            stats['total_sales'] += shoe.price_sold
-            stats['total_profit'] += shoe.price_sold - shoe.price_bought
+            stats['total_sales'] += int(shoe.price_sold)
+            stats['total_profit'] += int(shoe.price_sold) - int(shoe.price_bought)
 
         return render_template("portal.html", user = current_user, stats = stats)
     else:
