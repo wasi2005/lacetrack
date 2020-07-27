@@ -76,7 +76,7 @@ def portal():
 
         for shoe in current_user.inventory:
             stats['number_of_shoes'] += int(shoe.quantity)
-            stats['total_sales'] += float(shoe.price_sold) * float(shoe.quantity)
+            stats['total_sales'] += str(float(shoe.price_sold) * float(shoe.quantity))
             stats['total_profit'] += (float(shoe.price_sold) - float(shoe.price_bought)) * float(shoe.quantity)
 
         stats['total_sales'] = '$' + stats['total_sales']
