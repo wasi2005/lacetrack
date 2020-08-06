@@ -12,3 +12,4 @@ pyOpenSSL==19.1.0
 Flask-Login==0.5.0
 firebase_admin==4.3.0
 packagetracker==1.0
+bs4==0.0.1
