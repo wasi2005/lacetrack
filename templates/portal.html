@@ -604,7 +604,7 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-md-7 grid-margin stretch-card">
+            <div class="col-md-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
                   <p class="card-title mb-0">Current Inventory</p>
@@ -613,8 +613,13 @@
                       <thead>
                         <tr>
                           <th>Product</th>
-                          <th>Price</th>
-                          <th>Date</th>
+                          <th>Size</th>
+                          <th>Quantity</th>
+                          <th>Price Bought</th>
+                          <th>Date Bought</th>
+                          <th>Price Sold</th>
+                          <th>Date Sold</th>
+                          <th>Profit</th>
                           <th>Status</th>
                         </tr>
                       </thead>
@@ -622,8 +627,13 @@
                         {% for shoe in user.inventory %}
                         <tr>
                           <td>{{ shoe.name }}</td>
+                          <td>{{ shoe.size }}</td>
+                          <td>{{ shoe.quantity }}</td>
                           <td class="font-weight-bold">${{ shoe.price_bought }}</td>
                           <td>{{ shoe.date_bought }}</td>
+                          <td class="font-weight-bold">${{ shoe.price_sold }}</td>
+                          <td>{{ shoe.date_sold }}</td>
+                          <td class="font-weight-bold">${{ float(shoe.price_sold[1:]) - float(shoe.price_bought[1:]) }}</td>
                           {% if shoe.status == "0" %}
                           <td class="font-weight-medium text-success">Open</td>
                           {% elif shoe.status == "1" %}
@@ -636,34 +646,6 @@
                       </tbody>
                     </table>
                   </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-5 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">To Do Lists</h4>
-                  <div class="list-wrapper pt-2">
-                    <ul class="d-flex flex-column-reverse todo-list todo-list-custom">
-                      <li>
-                        <div class="form-check form-check-flat"> <label class="form-check-label"> <input class="checkbox" type="checkbox"> Meeting with Urban Team </label> </div> <i class="remove ti-close"></i>
-                      </li>
-                      <li class="completed">
-                        <div class="form-check form-check-flat"> <label class="form-check-label"> <input class="checkbox" type="checkbox" checked> Duplicate a project for new customer </label> </div> <i class="remove ti-close"></i>
-                      </li>
-                      <li>
-                        <div class="form-check form-check-flat"> <label class="form-check-label"> <input class="checkbox" type="checkbox"> Project meeting with CEO </label> </div> <i class="remove ti-close"></i>
-                      </li>
-                      <li class="completed">
-                        <div class="form-check form-check-flat"> <label class="form-check-label"> <input class="checkbox" type="checkbox" checked> Follow up of team zilla </label> </div> <i class="remove ti-close"></i>
-                      </li>
-                      <li>
-                        <div class="form-check form-check-flat"> <label class="form-check-label"> <input class="checkbox" type="checkbox"> Level up for Antony </label> </div> <i class="remove ti-close"></i>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="add-items d-flex mb-0 mt-2"> <input type="text" class="form-control todo-list-input" placeholder="Add new task"> <button class="add btn btn-icon text-primary todo-list-add-btn bg-transparent"><i
-                        class="ti-location-arrow"></i></button> </div>
                 </div>
               </div>
             </div>

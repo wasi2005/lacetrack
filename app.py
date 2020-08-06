@@ -19,6 +19,7 @@ from flask_login import (
 )
 from oauthlib.oauth2 import WebApplicationClient
 import requests
+from packagetracker.package import Package
 
 # Internal Imports
 from database import get_users
