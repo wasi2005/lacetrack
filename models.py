@@ -73,4 +73,4 @@ class Shoe(object):
         }
 
     def from_dict(shoe_dict):
-        return Shoe(shoe_dict['name'], shoe_dict['size'], shoe_dict['quantity'], shoe_dict['price_bought'], shoe_dict['price_sold'], shoe_dict['date_bought'], shoe_dict['date_sold'], shoe_dict['status'])
+        return Shoe(shoe_dict['name'], shoe_dict['size'], int(shoe_dict['quantity']), int(shoe_dict['price_bought']), int(shoe_dict['price_sold']), shoe_dict['date_bought'], shoe_dict['date_sold'], shoe_dict['status'])
