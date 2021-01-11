@@ -33,6 +33,7 @@ class User(UserMixin):
                 shoe.status = updated_attributes['status']
                 shoe.date_sold = updated_attributes['date_sold']
                 shoe.price_sold = updated_attributes['price_sold']
+                shoe.tracking_number = updated_attributes['tracking_number']
 
                 users_ref = get_users()
                 users_ref.document(self.id).set(self.to_dict())
