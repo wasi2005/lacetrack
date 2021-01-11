@@ -202,8 +202,8 @@
         <ul class="nav">
           <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='index.html')}}"> <i class="ti-home menu-icon"></i> <span class="menu-title">Dashboard</span> </a> </li>
           <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/widgets/widgets.html')}}"> <i class="ti-settings menu-icon"></i> <span class="menu-title">Inventory</span> </a> </li>
-          <li class="nav-item"> <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic"> <i class="ti-palette menu-icon"></i> <span class="menu-title">Tracking Numbers</span> <i
-                class="menu-arrow"></i>
+          <li class="nav-item"> <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic"> <em class="ti-palette menu-icon"></em> <span class="menu-title">Tracking Numbers</span> <em
+                class="menu-arrow"></em>
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
@@ -391,7 +391,6 @@
                   <div class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
                     <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">{{stats["number_of_shoes"] }}</h3> <i class="ti-calendar icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
                   </div>
-                  <!-- <p class="mb-0 mt-2 text-warning">2.00% <span class="text-body ml-1"><small>(30 days)</small></span></p> -->
                 </div>
               </div>
             </div>
@@ -402,7 +401,6 @@
                   <div class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
                     <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">{{stats["total_sales"]}}</h3> <i class="ti-user icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
                   </div>
-                  <!-- <p class="mb-0 mt-2 text-danger">0.22% <span class="text-body ml-1"><small>(30 days)</small></span></p> -->
                 </div>
               </div>
             </div>
@@ -413,7 +411,6 @@
                   <div class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
                     <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">{{stats["total_profit"]}}</h3> <i class="ti-agenda icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
                   </div>
-                  <!-- <p class="mb-0 mt-2 text-success">10.00%<span class="text-body ml-1"><small>(30 days)</small></span></p> -->
                 </div>
               </div>
             </div>
@@ -1127,13 +1124,9 @@
                     </div>
                     <div class="form-group">
                       <div class="input-group">
-                        <div class="input-group-prepend">
-
-                        </div>
-                        <input name="Tracking Number" type="number" placeholder="Tracking Number" class="form-control" aria-label="">
-                        <div class="input-group-append">
-
-                        </div>
+                        <div class="input-group-prepend"></div>
+                        <input name="tracking_number" type="number" placeholder="Tracking Number" class="form-control" aria-label="">
+                        <div class="input-group-append"></div>
                       </div>
                     </div>
                     <button type="submit" class="btn btn-primary mr-2">Submit</button>

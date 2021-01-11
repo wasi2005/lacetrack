@@ -182,7 +182,7 @@ def add_shoe():
     price_bought = request.form['price_bought']
     date_bought = request.form["date_bought"]
 
-    shoe = Shoe(name, size, quantity, price_bought, 0, date_bought, "--/--/--", "0", {"parcel_number" : "", "status": 0, "is_tracked" : False})
+    shoe = Shoe(name, size, quantity, price_bought, 0, date_bought, "--/--/--", "0", "")
     current_user.add_shoe(shoe)
 
     return redirect(url_for("portal"))
@@ -196,7 +196,8 @@ def update_shoe():
     updated_attributes = {
         'status' : '1' if request.form['status'] == "Pending" else '2',
         'date_sold' : request.form['date_sold'],
-        'price_sold' : request.form['price_sold']
+        'price_sold' : request.form['price_sold'],
+        'tracking_number' : request.form['tracking_number']
     }
 
     current_user.update_shoe(shoe_name, updated_attributes)

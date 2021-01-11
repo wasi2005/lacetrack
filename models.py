@@ -52,7 +52,7 @@ class User(UserMixin):
         return google_user
 
 class Shoe(object):
-    def __init__(self, name, size, quantity, price_bought, price_sold, date_bought, date_sold, status, tracking_info):
+    def __init__(self, name, size, quantity, price_bought, price_sold, date_bought, date_sold, status, tracking_number):
         self.name = name
         self.size = size
         self.quantity = quantity
@@ -61,7 +61,7 @@ class Shoe(object):
         self.date_bought = date_bought
         self.date_sold = date_sold
         self.status = status
-        self.tracking_info = tracking_info
+        self.tracking_number = tracking_number
 
     def to_dict(self):
         return {
@@ -73,7 +73,7 @@ class Shoe(object):
             'date_bought' : self.date_bought,
             'date_sold' : self.date_sold,
             'status' : self.status,
-            'tracking_info' : self.tracking_info,
+            'tracking_number' : self.tracking_number,
         }
 
     @staticmethod
@@ -87,5 +87,5 @@ class Shoe(object):
             shoe_dict['date_bought'], 
             shoe_dict['date_sold'], 
             shoe_dict['status'], 
-            shoe_dict['tracking_info']
+            shoe_dict['tracking_number']
         )
