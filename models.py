@@ -18,6 +18,7 @@ class User(UserMixin):
             'inventory' : [ shoe.to_dict() for shoe in self.inventory ]
         }
 
+    @staticmethod
     def parse_inventory(inventory):
         return [Shoe.from_dict(shoe_dict) for shoe_dict in inventory]
 
@@ -36,6 +37,7 @@ class User(UserMixin):
                 users_ref = get_users()
                 users_ref.document(self.id).set(self.to_dict())
 
+    @staticmethod
     def get(user_id):
         user_dict = get_users().document(user_id).get().to_dict()
         if user_dict == None:
@@ -50,7 +52,7 @@ class User(UserMixin):
         return google_user
 
 class Shoe(object):
-    def __init__(self, name, size, quantity, price_bought, price_sold, date_bought, date_sold, status):
+    def __init__(self, name, size, quantity, price_bought, price_sold, date_bought, date_sold, status, tracking_info):
         self.name = name
         self.size = size
         self.quantity = quantity
@@ -59,6 +61,7 @@ class Shoe(object):
         self.date_bought = date_bought
         self.date_sold = date_sold
         self.status = status
+        self.tracking_info = tracking_info
 
     def to_dict(self):
         return {
@@ -70,7 +73,19 @@ class Shoe(object):
             'date_bought' : self.date_bought,
             'date_sold' : self.date_sold,
             'status' : self.status,
+            'tracking_info' : self.tracking_info,
         }
 
+    @staticmethod
     def from_dict(shoe_dict):
-        return Shoe(shoe_dict['name'], shoe_dict['size'], int(shoe_dict['quantity']), int(shoe_dict['price_bought']), int(shoe_dict['price_sold']), shoe_dict['date_bought'], shoe_dict['date_sold'], shoe_dict['status'])
+        return Shoe(
+            shoe_dict['name'], 
+            shoe_dict['size'], 
+            int(shoe_dict['quantity']), 
+            int(shoe_dict['price_bought']), 
+            int(shoe_dict['price_sold']), 
+            shoe_dict['date_bought'], 
+            shoe_dict['date_sold'], 
+            shoe_dict['status'], 
+            shoe_dict['tracking_info']
+        )

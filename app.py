@@ -81,6 +81,8 @@ def portal():
         stats['total_sales'] = "${:,.2f}".format(stats['total_sales'])
         stats['total_profit'] = "${:,.2f}".format(stats['total_profit'])
 
+        print(current_user.inventory)
+
         return render_template("portal.html", user = current_user, stats = stats)
     else:
         return redirect('/')
@@ -180,8 +182,7 @@ def add_shoe():
     price_bought = request.form['price_bought']
     date_bought = request.form["date_bought"]
 
-
-    shoe = Shoe(name, size, quantity, price_bought, 0, date_bought, "--/--/--", "0")
+    shoe = Shoe(name, size, quantity, price_bought, 0, date_bought, "--/--/--", "0", {"parcel_number" : "", "status": 0, "is_tracked" : False})
     current_user.add_shoe(shoe)
 
     return redirect(url_for("portal"))
