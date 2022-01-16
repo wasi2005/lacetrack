@@ -39,7 +39,7 @@ flow = google_auth_oauthlib.flow.Flow.from_client_secrets_file(
 # match one of the authorized redirect URIs for the OAuth 2.0 client, which you
 # configured in the API Console. If this value doesn't match an authorized URI,
 # you will get a 'redirect_uri_mismatch' error.
-flow.redirect_uri = 'https://www.example.com/oauth2callback'
+flow.redirect_uri = 'https://lace-track.herokuapp.com/login/callback'
 
 # Generate URL for request to Google's OAuth 2.0 server.
 # Use kwargs to set optional request parameters.
