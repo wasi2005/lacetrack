@@ -888,7 +888,7 @@
                       <div class="input-group">
                         <div class="input-group-prepend">
                         </div>
-                        <select name="size" class="selectpicker" data-style=#2596be>
+                        <select name="size" class="selectpicker" data-style="btn-navy">
 
                           <option>5.5</option>
                           <option>6</option>
@@ -950,7 +950,7 @@
                       <div class="input-group">
                         <div class="input-group-prepend">
                         </div>
-                        <select name="name" class="selectpicker">
+                        <select name="name" class="selectpicker" data-style="btn-navy">
                           {% for shoe in user.inventory %}
                           {% if shoe.status == "0" or "1" %}
                           <option>{{ shoe.name }}</option>
@@ -963,7 +963,7 @@
                       <div class="input-group">
                         <div class="input-group-prepend">
                         </div>
-                        <select name="status" class="selectpicker">
+                        <select name="status" class="selectpicker" data-style="btn-navy">
                           <option>Pending</option>
                           <option>Sold</option>
                         </select>
