@@ -1,31 +1,58 @@
-<html lang="en">
-
-<head>
+<html lang="en"><head>
 
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>LaceTrack // Portal</title> <!-- plugins:css -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{url_for('static',filename='vendors/ti-icons/css/themify-icons.css')}}">
-  <link rel="stylesheet" href="{{url_for('static',filename='vendors/css/vendor.bundle.base.css')}}"> <!-- endinject -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/vendors/ti-icons/css/themify-icons.css">
+  <link rel="stylesheet" href="/static/vendors/css/vendor.bundle.base.css"> <!-- endinject -->
   <!-- Plugin css for this page -->
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
-  <link rel="stylesheet" href="{{url_for('static',filename='vendors/bootstrap-datepicker/bootstrap-datepicker.min.css')}}">
+  <link rel="stylesheet" href="/static/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css">
   <!-- End plugin css for this page -->
   <!-- inject:css -->
-  <link rel="stylesheet" href="{{url_for('static',filename='css/vertical-layout-dark/style.css')}}"> <!-- endinject -->
-  <link rel="shortcut icon" href="{{url_for('static',filename='images/logo.svg')}}" />
-</head>
+  <link rel="stylesheet" href="/static/css/vertical-layout-dark/style.css"> <!-- endinject -->
+  <link rel="shortcut icon" href="/static/images/logo.svg">
+<style type="text/css">
+@font-face {
+  font-weight: 400;
+  font-style:  normal;
+  font-family: 'Circular-Loom';
+
+  src: url('https://cdn.loom.com/assets/fonts/circular/CircularXXWeb-Book-cd7d2bcec649b1243839a15d5eb8f0a3.woff2') format('woff2');
+}
+
+@font-face {
+  font-weight: 500;
+  font-style:  normal;
+  font-family: 'Circular-Loom';
+
+  src: url('https://cdn.loom.com/assets/fonts/circular/CircularXXWeb-Medium-d74eac43c78bd5852478998ce63dceb3.woff2') format('woff2');
+}
+
+@font-face {
+  font-weight: 700;
+  font-style:  normal;
+  font-family: 'Circular-Loom';
+
+  src: url('https://cdn.loom.com/assets/fonts/circular/CircularXXWeb-Bold-83b8ceaf77f49c7cffa44107561909e4.woff2') format('woff2');
+}
+
+@font-face {
+  font-weight: 900;
+  font-style:  normal;
+  font-family: 'Circular-Loom';
+
+  src: url('https://cdn.loom.com/assets/fonts/circular/CircularXXWeb-Black-bf067ecb8aa777ceb6df7d72226febca.woff2') format('woff2');
+}</style></head>
 
 <body>
   <div class="container-scroller">
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-      <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center"> <a class="navbar-brand brand-logo mr-5" href="{{url_for('static',filename='index.html')}}"><img
-            src="{{url_for('static',filename='images/logo.svg')}}" class="mr-2" alt="logo" /></a> <a class="navbar-brand brand-logo-mini" href="{{url_for('static',filename='index.html')}}"><img
-            src="{{url_for('static',filename='images/logo-mini.svg')}}" alt="logo" /></a> </div>
+      <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center"> <a class="navbar-brand brand-logo mr-5" href="http://lace-track.herokuapp.com/portal"><img src="/static/images/logo.svg" class="mr-2" alt="logo"></a> <a class="navbar-brand brand-logo-mini" href="http://lace-track.herokuapp.com/portal"><img src="/static/images/logo-mini.svg" alt="logo"></a> </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end"> <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize"> <!--span class="ti-layout-grid2"></span--> </button>
         <!--ul class="navbar-nav mr-lg-2">
           <li class="nav-item nav-search d-none d-lg-block">
@@ -39,19 +66,19 @@
           <li class="nav-item dropdown mr-1"> <a class="nav-link count-indicator dropdown-toggle d-flex justify-content-center align-items-center" id="messageDropdown" href="#" data-toggle="dropdown"> <!--i class="ti-email mx-0"></i--> </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="messageDropdown">
               <p class="mb-0 font-weight-normal float-left dropdown-header">Messages</p> <a class="dropdown-item preview-item">
-                <div class="preview-thumbnail"> <img src="{{url_for('static',filename='images/faces/face4.jpg')}}" alt="image" class="profile-pic"> </div>
+                <div class="preview-thumbnail"> <img src="/static/images/faces/face4.jpg" alt="image" class="profile-pic"> </div>
                 <div class="preview-item-content flex-grow">
                   <h6 class="preview-subject ellipsis font-weight-normal">David Grey </h6>
                   <p class="font-weight-light small-text text-muted mb-0"> The meeting is cancelled </p>
                 </div>
               </a> <a class="dropdown-item preview-item">
-                <div class="preview-thumbnail"> <img src="{{url_for('static',filename='images/faces/face2.jpg')}}" alt="image" class="profile-pic"> </div>
+                <div class="preview-thumbnail"> <img src="/static/images/faces/face2.jpg" alt="image" class="profile-pic"> </div>
                 <div class="preview-item-content flex-grow">
                   <h6 class="preview-subject ellipsis font-weight-normal">Tim Cook </h6>
                   <p class="font-weight-light small-text text-muted mb-0"> New product launch </p>
                 </div>
               </a> <a class="dropdown-item preview-item">
-                <div class="preview-thumbnail"> <img src="{{url_for('static',filename='images/faces/face3.jpg')}}" alt="image" class="profile-pic"> </div>
+                <div class="preview-thumbnail"> <img src="/static/images/faces/face3.jpg" alt="image" class="profile-pic"> </div>
                 <div class="preview-item-content flex-grow">
                   <h6 class="preview-subject ellipsis font-weight-normal"> Johnson </h6>
                   <p class="font-weight-light small-text text-muted mb-0"> Upcoming board meeting </p>
@@ -88,9 +115,8 @@
               </a>
             </div>
           </li-->
-          <li class="nav-item nav-profile dropdown"> <a class="nav-link" href="#" data-toggle="dropdown" id="profileDropdown"> <img style="height: 40px; width: 40px;" src="{{ user.profile_pic }}" alt="profile" /> </a>
+          <li class="nav-item nav-profile dropdown"> <a class="nav-link" href="#" data-toggle="dropdown" id="profileDropdown"> <img style="height: 40px; width: 40px;" src="https://lh6.googleusercontent.com/-2WswdWkmTcM/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucmUnK5NzMuMTgdUcZcJleyX07ntrw/s96-c/photo.jpg" alt="profile"> </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-              <a class="dropdown-item"> <i class="ti-settings text-primary"></i> Settings </a>
               <a class="dropdown-item" href="/logout"> <i class="ti-power-off text-primary"></i> Logout </a>
             </div>
           </li>
@@ -106,7 +132,7 @@
           <li class="nav-item"> <a class="nav-link" id="chats-tab" data-toggle="tab" href="#chats-section" role="tab" aria-controls="chats-section">CHATS</a> </li>
         </ul>
         <div class="tab-content" id="setting-content">
-          <div class="tab-pane fade show active scroll-wrapper" id="todo-section" role="tabpanel" aria-labelledby="todo-section">
+          <div class="tab-pane fade show active scroll-wrapper ps ps--active-y" id="todo-section" role="tabpanel" aria-labelledby="todo-section">
             <div class="add-items d-flex px-3 mb-0">
               <form class="form w-100">
                 <div class="form-group d-flex"> <input type="text" class="form-control todo-list-input" placeholder="Add To-do"> <button type="submit" class="add btn btn-primary todo-list-add-btn" id="add-task">Add</button> </div>
@@ -115,19 +141,19 @@
             <div class="list-wrapper px-3">
               <ul class="d-flex flex-column-reverse todo-list">
                 <li>
-                  <div class="form-check"> <label class="form-check-label"> <input class="checkbox" type="checkbox"> Team review meeting at 3.00 PM </label> </div> <i class="remove ti-close"></i>
+                  <div class="form-check"> <label class="form-check-label"> <input class="checkbox" type="checkbox"> Team review meeting at 3.00 PM <i class="input-helper"></i></label> </div> <i class="remove ti-close"></i>
                 </li>
                 <li>
-                  <div class="form-check"> <label class="form-check-label"> <input class="checkbox" type="checkbox"> Prepare for presentation </label> </div> <i class="remove ti-close"></i>
+                  <div class="form-check"> <label class="form-check-label"> <input class="checkbox" type="checkbox"> Prepare for presentation <i class="input-helper"></i></label> </div> <i class="remove ti-close"></i>
                 </li>
                 <li>
-                  <div class="form-check"> <label class="form-check-label"> <input class="checkbox" type="checkbox"> Resolve all the low priority tickets due today </label> </div> <i class="remove ti-close"></i>
+                  <div class="form-check"> <label class="form-check-label"> <input class="checkbox" type="checkbox"> Resolve all the low priority tickets due today <i class="input-helper"></i></label> </div> <i class="remove ti-close"></i>
                 </li>
                 <li class="completed">
-                  <div class="form-check"> <label class="form-check-label"> <input class="checkbox" type="checkbox" checked> Schedule meeting for next week </label> </div> <i class="remove ti-close"></i>
+                  <div class="form-check"> <label class="form-check-label"> <input class="checkbox" type="checkbox" checked=""> Schedule meeting for next week <i class="input-helper"></i></label> </div> <i class="remove ti-close"></i>
                 </li>
                 <li class="completed">
-                  <div class="form-check"> <label class="form-check-label"> <input class="checkbox" type="checkbox" checked> Project review </label> </div> <i class="remove ti-close"></i>
+                  <div class="form-check"> <label class="form-check-label"> <input class="checkbox" type="checkbox" checked=""> Project review <i class="input-helper"></i></label> </div> <i class="remove ti-close"></i>
                 </li>
               </ul>
             </div>
@@ -142,21 +168,21 @@
               <p class="mb-0 font-weight-thin text-gray">Meeting with Alisa</p>
               <p class="text-gray mb-0 ">Call Sarah Graves</p>
             </div>
-          </div> <!-- To do section tab ends -->
+          <div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; height: 877px; right: 0px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 633px;"></div></div></div> <!-- To do section tab ends -->
           <div class="tab-pane fade" id="chats-section" role="tabpanel" aria-labelledby="chats-section">
             <div class="d-flex align-items-center justify-content-between border-bottom">
               <p class="settings-heading border-top-0 mb-3 pl-3 pt-0 border-bottom-0 pb-0">Friends</p> <small class="settings-heading border-top-0 mb-3 pt-0 border-bottom-0 pb-0 pr-3 font-weight-normal">See All</small>
             </div>
             <ul class="chat-list">
               <li class="list active">
-                <div class="profile"><img src="{{url_for('static',filename='images/faces/face1.jpg')}}" alt="image"><span class="online"></span></div>
+                <div class="profile"><img src="/static/images/faces/face1.jpg" alt="image"><span class="online"></span></div>
                 <div class="info">
                   <p>Thomas Douglas</p>
                   <p>Available</p>
                 </div> <small class="text-muted my-auto">19 min</small>
               </li>
               <li class="list">
-                <div class="profile"><img src="{{url_for('static',filename='images/faces/face2.jpg')}}" alt="image"><span class="offline"></span></div>
+                <div class="profile"><img src="/static/images/faces/face2.jpg" alt="image"><span class="offline"></span></div>
                 <div class="info">
                   <div class="wrapper d-flex">
                     <p>Catherine</p>
@@ -166,28 +192,28 @@
                 <div class="badge badge-success badge-pill my-auto mx-2">4</div> <small class="text-muted my-auto">23 min</small>
               </li>
               <li class="list">
-                <div class="profile"><img src="{{url_for('static',filename='images/faces/face3.jpg')}}" alt="image"><span class="online"></span></div>
+                <div class="profile"><img src="/static/images/faces/face3.jpg" alt="image"><span class="online"></span></div>
                 <div class="info">
                   <p>Daniel Russell</p>
                   <p>Available</p>
                 </div> <small class="text-muted my-auto">14 min</small>
               </li>
               <li class="list">
-                <div class="profile"><img src="{{url_for('static',filename='images/faces/face4.jpg')}}" alt="image"><span class="offline"></span></div>
+                <div class="profile"><img src="/static/images/faces/face4.jpg" alt="image"><span class="offline"></span></div>
                 <div class="info">
                   <p>James Richardson</p>
                   <p>Away</p>
                 </div> <small class="text-muted my-auto">2 min</small>
               </li>
               <li class="list">
-                <div class="profile"><img src="{{url_for('static',filename='images/faces/face5.jpg')}}" alt="image"><span class="online"></span></div>
+                <div class="profile"><img src="/static/images/faces/face5.jpg" alt="image"><span class="online"></span></div>
                 <div class="info">
                   <p>Madeline Kennedy</p>
                   <p>Available</p>
                 </div> <small class="text-muted my-auto">5 min</small>
               </li>
               <li class="list">
-                <div class="profile"><img src="{{url_for('static',filename='images/faces/face6.jpg')}}" alt="image"><span class="online"></span></div>
+                <div class="profile"><img src="/static/images/faces/face6.jpg" alt="image"><span class="online"></span></div>
                 <div class="info">
                   <p>Sarah Graves</p>
                   <p>Available</p>
@@ -198,166 +224,60 @@
         </div>
       </div> <!-- partial -->
       <!-- partial:partials/_sidebar.html -->
-       <nav class="sidebar sidebar-offcanvas" id="sidebar">
-        <ul class="nav">
-           <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='index.html')}}"> <i class="ti-home menu-icon"></i> <span class="menu-title">Dashboard</span> </a> </li>
-           <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/widgets/widgets.html')}}"> <i class="ti-settings menu-icon"></i> <span class="menu-title">Inventory</span> </a> </li>
-          <li class="nav-item"> <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic"> <em class="ti-palette menu-icon"></em> <span class="menu-title">Tracking Numbers</span> <em
-                class="menu-arrow"></em>
-            </a>
-            <div class="collapse" id="ui-basic">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/ui-features/accordions.html')}}">Accordions</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/ui-features/buttons.html')}}">Buttons</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/ui-features/badges.html')}}">Badges</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/ui-features/breadcrumbs.html')}}">Breadcrumbs</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/ui-features/dropdowns.html')}}">Dropdowns</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/ui-features/modals.html')}}">Modals</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/ui-features/progress.html')}}">Progress bar</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/ui-features/pagination.html')}}">Pagination</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/ui-features/tabs.html')}}">Tabs</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/ui-features/typography.html')}}">Typography</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/ui-features/tooltips.html')}}">Tooltips</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item"> <a class="nav-link" data-toggle="collapse" href="#ui-advanced" aria-expanded="false" aria-controls="ui-advanced"> <i class="ti-view-list menu-icon"></i> <span class="menu-title">Sales</span> <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="ui-advanced">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/ui-features/dragula.html')}}">Dragula</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/ui-features/clipboard.html')}}">Clipboard</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/ui-features/context-menu.html')}}">Context menu</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/ui-features/slider.html')}}">Sliders</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/ui-features/carousel.html')}}">Carousel</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/ui-features/colcade.html')}}">Colcade</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/ui-features/loaders.html')}}">Loaders</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item"> <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements"> <i class="ti-clipboard menu-icon"></i> <span class="menu-title">Shoe Charts</span> <i
-                class="menu-arrow"></i> </a>
-            <div class="collapse" id="form-elements">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="{{url_for('static',filename='pages/forms/basic_elements.html')}}">Basic Elements</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{url_for('static',filename='pages/forms/advanced_elements.html')}}">Advanced Elements</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{url_for('static',filename='pages/forms/validation.html')}}">Validation</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{url_for('static',filename='pages/forms/wizard.html')}}">Wizard</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item"> <a class="nav-link" data-toggle="collapse" href="#editors" aria-expanded="false" aria-controls="editors"> <i class="ti-eraser menu-icon"></i> <span class="menu-title">Editors</span> <i class="menu-arrow"></i> </a>
-            <div class="collapse" id="editors">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="{{url_for('static',filename='pages/forms/text_editor.html')}}">Text editors</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{url_for('static',filename='pages/forms/code_editor.html')}}">Code editors</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item"> <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts"> <i class="ti-bar-chart-alt menu-icon"></i> <span class="menu-title">Charts</span> <i class="menu-arrow"></i> </a>
-            <div class="collapse" id="charts">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/charts/chartjs.html')}}">ChartJs</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/charts/morris.html')}}">Morris</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/charts/flot-chart.html')}}">Flot</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/charts/google-charts.html')}}">Google charts</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/charts/sparkline.html')}}">Sparkline js</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/charts/c3.html')}}">C3 charts</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/charts/chartist.html')}}">Chartists</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/charts/justGage.html')}}">JustGage</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item"> <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables"> <i class="ti-layout menu-icon"></i> <span class="menu-title">Tables</span> <i class="menu-arrow"></i> </a>
-            <div class="collapse" id="tables">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/tables/basic-table.html')}}">Basic table</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/tables/data-table.html')}}">Data table</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/tables/js-grid.html')}}">Js-grid</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/tables/sortable-table.html')}}">Sortable table</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/ui-features/popups.html')}}"> <i class="ti-export menu-icon"></i> <span class="menu-title">Popups</span> </a> </li>
-          <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/ui-features/notifications.html')}}"> <i class="ti-bell menu-icon"></i> <span class="menu-title">Notifications</span> </a> </li>
-          <li class="nav-item"> <a class="nav-link" data-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons"> <i class="ti-face-smile menu-icon"></i> <span class="menu-title">Icons</span> <i class="menu-arrow"></i> </a>
-            <div class="collapse" id="icons">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/icons/flag-icons.html')}}">Flag icons</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/icons/mdi.html')}}">Mdi icons</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/icons/font-awesome.html')}}">Font Awesome</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/icons/simple-line-icon.html')}}">Simple line icons</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/icons/themify.html')}}">Themify icons</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item"> <a class="nav-link" data-toggle="collapse" href="#maps" aria-expanded="false" aria-controls="maps"> <i class="ti-map menu-icon"></i> <span class="menu-title">Maps</span> <i class="menu-arrow"></i> </a>
-            <div class="collapse" id="maps">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/maps/mapael.html')}}">Mapael</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/maps/vector-map.html')}}">Vector Map</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/maps/google-maps.html')}}">Google Map</a></li>
-              </ul> -->
-            <-- </div>
-          </li>
-          <li class="nav-item"> <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth"> <i class="ti-layers-alt menu-icon"></i> <span class="menu-title">User Pages</span> <i class="menu-arrow"></i> </a>
-            <div class="collapse" id="auth">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/samples/login.html')}}"> Login </a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/samples/login-2.html')}}"> Login 2 </a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/samples/register.html')}}"> Register </a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/samples/register-2.html')}}"> Register 2 </a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/samples/lock-screen.html')}}"> Lockscreen </a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item"> <a class="nav-link" data-toggle="collapse" href="#error" aria-expanded="false" aria-controls="error"> <i class="ti-help-alt menu-icon"></i> <span class="menu-title">Error pages</span> <i class="menu-arrow"></i> </a>
-            <div class="collapse" id="error">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/samples/error-404.html')}}"> 404 </a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/samples/error-500.html')}}"> 500 </a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item"> <a class="nav-link" data-toggle="collapse" href="#general-pages" aria-expanded="false" aria-controls="general-pages"> <i class="ti-layers menu-icon"></i> <span class="menu-title">General Pages</span> <i
-                class="menu-arrow"></i> </a>
-            <div class="collapse" id="general-pages">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/samples/blank-page.html')}}"> Blank Page </a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/samples/profile.html')}}"> Profile </a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/samples/faq.html')}}"> FAQ </a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/samples/faq-2.html')}}"> FAQ 2 </a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/samples/news-grid.html')}}"> News grid </a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/samples/timeline.html')}}"> Timeline </a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/samples/search-results.html')}}"> Search Results </a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/samples/portfolio.html')}}"> Portfolio </a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item"> <a class="nav-link" data-toggle="collapse" href="#e-commerce" aria-expanded="false" aria-controls="e-commerce"> <i class="ti-shopping-cart menu-icon"></i> <span class="menu-title">E-commerce</span> <i
-                class="menu-arrow"></i> </a>
-            <div class="collapse" id="e-commerce">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/samples/invoice.html')}}"> Invoice </a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/samples/pricing-table.html')}}"> Pricing Table </a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/samples/orders.html')}}"> Orders </a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/apps/email.html')}}"> <i class="ti-email menu-icon"></i> <span class="menu-title">E-mail</span> </a> </li>
-          <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/apps/calendar.html')}}"> <i class="ti-calendar menu-icon"></i> <span class="menu-title">Calendar</span> </a> </li>
-          <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/apps/todo.html')}}"> <i class="ti-check-box menu-icon"></i> <span class="menu-title">Todo List</span> </a> </li>
-          <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/apps/gallery.html')}}"> <i class="ti-gallery menu-icon"></i> <span class="menu-title">Gallery</span> </a> </li>
-          <li class="nav-item"> <a class="nav-link" href="{{url_for('static',filename='pages/documentation/documentation.html')}}"> <i class="ti-write menu-icon"></i> <span class="menu-title">Documentation</span> </a> </li>
-         </ul>
-      </nav>
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+       <ul class="nav">
+          <li class="nav-item active"> <a class="nav-link" href="http://lace-track.herokuapp.com/portal"> <i class="ti-home menu-icon"></i> <span class="menu-title">Dashboard</span> </a> </li>
+          <li class="nav-item"> <a class="nav-link" href="/static/pages/widgets/widgets.html"> <i class="ti-settings menu-icon"></i> <span class="menu-title">Resources/Information</span> </a> </li>
+           <div class="collapse" id="ui-basic">
+             <ul class="nav flex-column sub-menu">
+               <li class="nav-item"> <a class="nav-link" href="/static/pages/ui-features/accordions.html">Accordions</a></li>
+               <li class="nav-item"> <a class="nav-link" href="/static/pages/ui-features/buttons.html">Buttons</a></li>
+               <li class="nav-item"> <a class="nav-link" href="/static/pages/ui-features/badges.html">Badges</a></li>
+               <li class="nav-item"> <a class="nav-link" href="/static/pages/ui-features/breadcrumbs.html">Breadcrumbs</a></li>
+               <li class="nav-item"> <a class="nav-link" href="/static/pages/ui-features/dropdowns.html">Dropdowns</a></li>
+               <li class="nav-item"> <a class="nav-link" href="/static/pages/ui-features/modals.html">Modals</a></li>
+               <li class="nav-item"> <a class="nav-link" href="/static/pages/ui-features/progress.html">Progress bar</a></li>
+               <li class="nav-item"> <a class="nav-link" href="/static/pages/ui-features/pagination.html">Pagination</a></li>
+               <li class="nav-item"> <a class="nav-link" href="/static/pages/ui-features/tabs.html">Tabs</a></li>
+               <li class="nav-item"> <a class="nav-link" href="/static/pages/ui-features/typography.html">Typography</a></li>
+               <li class="nav-item"> <a class="nav-link" href="/static/pages/ui-features/tooltips.html">Tooltips</a></li>
+             </ul>
+           </div>
+
+         <li class="nav-item"> <a class="nav-link" data-toggle="collapse" href="#ui-advanced" aria-expanded="false" aria-controls="ui-advanced"> <i class="ti-view-list menu-icon"></i> <span class="menu-title">Sell your shoes</span> <i class="menu-arrow"></i>
+           </a>
+           <div class="collapse" id="ui-advanced">
+             <ul class="nav flex-column sub-menu">
+               <li class="nav-item"> <a class="nav-link" href="/static/pages/ui-features/dragula.html">Dragula</a></li>
+               <li class="nav-item"> <a class="nav-link" href="/static/pages/ui-features/clipboard.html">Clipboard</a></li>
+               <li class="nav-item"> <a class="nav-link" href="/static/pages/ui-features/context-menu.html">Context menu</a></li>
+               <li class="nav-item"> <a class="nav-link" href="/static/pages/ui-features/slider.html">Sliders</a></li>
+               <li class="nav-item"> <a class="nav-link" href="/static/pages/ui-features/carousel.html">Carousel</a></li>
+               <li class="nav-item"> <a class="nav-link" href="/static/pages/ui-features/colcade.html">Colcade</a></li>
+               <li class="nav-item"> <a class="nav-link" href="/static/pages/ui-features/loaders.html">Loaders</a></li>
+             </ul>
+           </div>
+         </li>
+         <li class="nav-item"> <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements"> <i class="ti-clipboard menu-icon"></i> <span class="menu-title">Ship your Shoes</span> <i class="menu-arrow"></i> </a>
+           <div class="collapse" id="form-elements">
+             <ul class="nav flex-column sub-menu">
+               <li class="nav-item"><a class="nav-link" href="/static/pages/forms/basic_elements.html">Basic Elements</a></li>
+               <li class="nav-item"><a class="nav-link" href="/static/pages/forms/advanced_elements.html">Advanced Elements</a></li>
+               <li class="nav-item"><a class="nav-link" href="/static/pages/forms/validation.html">Validation</a></li>
+               <li class="nav-item"><a class="nav-link" href="/static/pages/forms/wizard.html">Wizard</a></li>
+             </ul>
+           </div>
+         </li>
+       </ul>
+     </nav>
       <div class="main-panel">
         <div class="content-wrapper">
           <div class="row">
             <div class="col-md-12 grid-margin">
               <div class="row">
                 <div class="col-12 col-xl-5 mb-4 mb-xl-0">
-                  <h4 class="font-weight-normal" style="font-size: 50px;">Hi, {{ user.name }}!</h4>
+                    <h1 class="font-weight-bold" style="font-size: 50px;">Hey, Wasi!</h1>
+                    <h1 class="font-weight-bold" style="font-size: 50px;">Welcome Back to LaceTrack!</h1>
                 </div>
                 <!--div class="col-12 col-xl-7">
                   <div class="d-flex align-items-center justify-content-between flex-wrap">
@@ -389,7 +309,7 @@
                 <div class="card-body">
                   <p class="card-title text-md-center text-xl-left">Number of Shoes</p>
                   <div class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
-                    <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">{{stats["number_of_shoes"] }}</h3> <i class="ti-calendar icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
+                    <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">2</h3>
                   </div>
                 </div>
               </div>
@@ -399,7 +319,7 @@
                 <div class="card-body">
                   <p class="card-title text-md-center text-xl-left">Total Sales</p>
                   <div class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
-                    <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">{{stats["total_sales"]}}</h3> <i class="ti-user icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
+                    <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">$400.00</h3>
                   </div>
                 </div>
               </div>
@@ -409,7 +329,7 @@
                 <div class="card-body">
                   <p class="card-title text-md-center text-xl-left">Total Profit</p>
                   <div class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
-                    <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">{{stats["total_profit"]}}</h3> <i class="ti-agenda icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
+                    <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">$-341.00</h3>
                   </div>
                 </div>
               </div>
@@ -419,7 +339,7 @@
                 <div class="card-body">
                   <p class="card-title text-md-center text-xl-left">Gross Revenue</p>
                   <div class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
-                    <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">61344</h3> <i class="ti-layers-alt icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
+                    <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">61344</h3>
                   </div>
                   <p class="mb-0 mt-2 text-success">22.00%<span class="text-body ml-1"><small>(30 days)</small></span></p>
                 </div>
@@ -549,8 +469,7 @@
                           </div>
                         </div>
                       </div>
-                    </div> <a class="carousel-control-prev" href="#performanceOverview" role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a> <a
-                      class="carousel-control-next" href="#performanceOverview" role="button" data-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span> </a>
+                    </div> <a class="carousel-control-prev" href="#performanceOverview" role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a> <a class="carousel-control-next" href="#performanceOverview" role="button" data-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span> </a>
                   </div>
                 </div>
               </div>
@@ -623,25 +542,35 @@
                         </tr>
                       </thead>
                       <tbody>
-                        {% for shoe in user.inventory %}
+
                         <tr>
-                          <td>{{ shoe.name }}</td>
-                          <td>{{ shoe.size }}</td>
-                          <td>{{ shoe.quantity }}</td>
-                          <td class="font-weight-bold">${{ shoe.price_bought }}</td>
-                          <td>{{ shoe.date_bought }}</td>
-                          <td class="font-weight-bold">${{ shoe.price_sold }}</td>
-                          <td>{{ shoe.date_sold }}</td>
-                          <td class="font-weight-bold">${{ shoe.quantity * (shoe.price_sold - shoe.price_bought) }}</td>
-                          {% if shoe.status == "0" %}
-                          <td class="font-weight-medium text-success">Open</td>
-                          {% elif shoe.status == "1" %}
-                          <td class="font-weight-medium text-warning">Pending</td>
-                          {% elif shoe.status == "2" %}
+                          <td>Yeezy Boost 350</td>
+                          <td>12M</td>
+                          <td>1</td>
+                          <td class="font-weight-bold">$320</td>
+                          <td>01/16/2021</td>
+                          <td class="font-weight-bold">$400</td>
+                          <td>01/30/2021</td>
+                          <td class="font-weight-bold">$80</td>
+
                           <td class="font-weight-medium text-danger">Sold</td>
-                          {% endif %}
+
                         </tr>
-                        {% endfor %}
+
+                        <tr>
+                          <td>Jordan 1 Low</td>
+                          <td>9M</td>
+                          <td>1</td>
+                          <td class="font-weight-bold">$421</td>
+                          <td>01/15/2021</td>
+                          <td class="font-weight-bold">$0</td>
+                          <td>--/--/--</td>
+                          <td class="font-weight-bold">$-421</td>
+
+                          <td class="font-weight-medium text-success">Open</td>
+
+                        </tr>
+
                       </tbody>
                     </table>
                   </div>
@@ -1015,29 +944,70 @@
                     Add shoes to your inventory to conveniently centralize your statistics and track additional pieces of information with LaceTrack to better inform your investment decisions.
                   </p>
                   <!-- POST Request: https://lace-track.herokuapp.com/add-shoe?name=Yeezy+Boost+350&size=12.5M&quantity=2&price-bought=274.00&date_bought=04/26/2005  -->
-                  <form action="/add-shoe" method="post">
+                  <form action="/add-shoe" method="post" data-dashlane-rid="1b885fbf9d203b3a" data-form-type="">
                     <div class="form-group">
                       <div class="input-group">
                         <div class="input-group-prepend">
-                          <span class="input-group-text">@</span>
                         </div>
-                        <input name="name" type="text" class="form-control" placeholder="Shoe Name (e.g. Yeezy Boost 350)" aria-label="Username">
+                        <input name="name" type="text" class="form-control" placeholder="Shoe Name (e.g. Yeezy Boost 350)" aria-label="Username" data-dashlane-rid="6f0d461a7cff7c8e" data-form-type="" data-kwimpalastatus="dead">
                       </div>
                     </div>
-                    <div class="form-group">
+                    <!--div class="form-group">
                       <div class="input-group">
                         <div class="input-group-prepend">
-                          <span class="input-group-text">*</span>
                         </div>
                         <input name="size" type="text" class="form-control" placeholder="Shoe Size (e.g. 12 Mens)" aria-label="Username">
                       </div>
-                    </div>
+                    </div-->
+
+
                     <div class="form-group">
                       <div class="input-group">
                         <div class="input-group-prepend">
-                          <span class="input-group-text">#</span>
                         </div>
-                        <input name="quantity" type="number" class="form-control" placeholder="Quantity (e.g. 2)" aria-label="Username">
+                        <div class="dropdown bootstrap-select"><select name="size" class="selectpicker" data-style="btn-navy" tabindex="-98">
+
+                          <option>4</option>
+                          <option>4.5</option>
+                          <option>5.5</option>
+                          <option>6</option>
+                          <option>6.5</option>
+                          <option>7</option>
+                          <option>7.5</option>
+                          <option>8</option>
+                          <option>8.5</option>
+                          <option>9</option>
+                          <option>9.5</option>
+                          <option>10</option>
+                          <option>10.5</option>
+                          <option>11</option>
+                          <option>12.5</option>
+                          <option>13</option>
+                          <option>13.5</option>
+                          <option>14</option>
+                          <option>Small</option>
+                          <option>Medium</option>
+                          <option>Large</option>
+                          <option>One Size</option>
+                          <option>N/A</option>
+                        </select><button type="button" class="btn dropdown-toggle btn-navy" data-toggle="dropdown" role="combobox" aria-owns="bs-select-1" aria-haspopup="listbox" aria-expanded="false" title="4" data-dashlane-rid="c06eff39ce61abc6" data-form-type="" data-dashlane-label="true"><div class="filter-option"><div class="filter-option-inner"><div class="filter-option-inner-inner">4</div></div> </div></button><div class="dropdown-menu "><div class="inner show" role="listbox" id="bs-select-1" tabindex="-1"><ul class="dropdown-menu inner show" role="presentation"></ul></div></div></div>
+                      </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+                    <div class="form-group">
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                        </div>
+                        <input name="quantity" type="number" class="form-control" placeholder="Quantity (e.g. 2)" aria-label="Username" data-dashlane-rid="d2abc1449ae20fa5" data-form-type="">
                       </div>
                     </div>
                     <div class="form-group">
@@ -1045,7 +1015,7 @@
                         <div class="input-group-prepend">
                           <span class="input-group-text bg-primary text-white">$</span>
                         </div>
-                        <input name="price_bought" type="number" placeholder="Buy Price (e.g. $350.00)" class="form-control" aria-label="Amount (to the nearest dollar)">
+                        <input name="price_bought" type="number" placeholder="Buy Price (e.g. $350.00)" class="form-control" aria-label="Amount (to the nearest dollar)" data-dashlane-rid="433f6543d2264009" data-form-type="">
                         <div class="input-group-append">
                           <span class="input-group-text">.00</span>
                         </div>
@@ -1053,14 +1023,14 @@
                     </div>
                     <div class="form-group">
                       <div id="datepicker-popup" class="input-group date datepicker">
-                        <input name="date_bought" placeholder="Date Bought (e.g. 07/23/2020)" type="text" class="form-control" onclick="$('.datepicker').datepicker();">
+                        <input name="date_bought" placeholder="Date Bought (e.g. 07/23/2020)" type="text" class="form-control" onclick="$('.datepicker').datepicker();" data-dashlane-rid="d7656b863ea118b9" data-form-type="">
                         <span class="input-group-addon input-group-append border-left" onclick="$('.datepicker').datepicker();">
                           <span class="ti-calendar input-group-text"></span>
                         </span>
                       </div>
                     </div>
-                    <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                    <button type="reset" class="btn btn-light">Cancel</button>
+                    <button type="submit" class="btn btn-primary mr-2" data-dashlane-rid="95f02683c91e94ed" data-form-type="" data-dashlane-label="true">Submit</button>
+                    <button type="reset" class="btn btn-danger" data-dashlane-rid="fc6815edfdbffa12" data-form-type="" data-dashlane-label="true">Cancel</button>
                   </form>
                 </div>
               </div>
@@ -1073,34 +1043,32 @@
                     Update current shoes in your inventory to update and manage your portfolio.
                   </p>
                   <!-- POST Request: https://lace-track.herokuapp.com/add-shoe?name=Yeezy+Boost+350&size=12.5M&quantity=2&price-bought=274.00&date_bought=04/26/2005  -->
-                  <form action="/update-shoe" method="post">
+                  <form action="/update-shoe" method="post" data-dashlane-rid="974e32d0b8759c2e" data-form-type="">
                     <div class="form-group">
                       <div class="input-group">
                         <div class="input-group-prepend">
-
-                          <span class="input-group-text">@</span>
-
                         </div>
-                        <select name="name" class="selectpicker">
-                          {% for shoe in user.inventory %}
-                          {% if shoe.status == "0" or "1" %}
-                          <option>{{ shoe.name }}</option>
-                          {% endif %}
-                          {% endfor %}
-                        </select>
+                        <div class="dropdown bootstrap-select"><select name="name" class="selectpicker" data-style="btn-navy" tabindex="-98">
+
+
+                          <option>Yeezy Boost 350</option>
+
+
+
+                          <option>Jordan 1 Low</option>
+
+
+                        </select><button type="button" class="btn dropdown-toggle btn-navy" data-toggle="dropdown" role="combobox" aria-owns="bs-select-2" aria-haspopup="listbox" aria-expanded="false" title="Yeezy Boost 350"><div class="filter-option"><div class="filter-option-inner"><div class="filter-option-inner-inner">Yeezy Boost 350</div></div> </div></button><div class="dropdown-menu "><div class="inner show" role="listbox" id="bs-select-2" tabindex="-1"><ul class="dropdown-menu inner show" role="presentation"></ul></div></div></div>
                       </div>
                     </div>
                     <div class="form-group">
                       <div class="input-group">
                         <div class="input-group-prepend">
-
-                          <span class="input-group-text">#</span>
-
                         </div>
-                        <select name="status" class="selectpicker">
+                        <div class="dropdown bootstrap-select"><select name="status" class="selectpicker" data-style="btn-navy" tabindex="-98">
                           <option>Pending</option>
                           <option>Sold</option>
-                        </select>
+                        </select><button type="button" class="btn dropdown-toggle btn-navy" data-toggle="dropdown" role="combobox" aria-owns="bs-select-3" aria-haspopup="listbox" aria-expanded="false" title="Pending"><div class="filter-option"><div class="filter-option-inner"><div class="filter-option-inner-inner">Pending</div></div> </div></button><div class="dropdown-menu "><div class="inner show" role="listbox" id="bs-select-3" tabindex="-1"><ul class="dropdown-menu inner show" role="presentation"></ul></div></div></div>
                       </div>
                     </div>
                     <div class="form-group">
@@ -1108,7 +1076,7 @@
                         <div class="input-group-prepend">
                           <span class="input-group-text bg-primary text-white">$</span>
                         </div>
-                        <input name="price_sold" type="number" placeholder="Selling Price (e.g. 400)" class="form-control" aria-label="Amount (to the nearest dollar)">
+                        <input name="price_sold" type="number" placeholder="Selling Price (e.g. 400)" class="form-control" aria-label="Amount (to the nearest dollar)" data-dashlane-rid="6c2f7367de7956bb" data-form-type="">
                         <div class="input-group-append">
                           <span class="input-group-text">.00</span>
                         </div>
@@ -1116,7 +1084,7 @@
                     </div>
                     <div class="form-group">
                       <div id="datepicker-popup" class="input-group date datepicker">
-                        <input name="date_sold" placeholder="Date Sold (e.g. 07/23/2020)" type="text" class="form-control" onclick="$('.datepicker').datepicker();">
+                        <input name="date_sold" placeholder="Date Sold (e.g. 07/23/2020)" type="text" class="form-control" onclick="$('.datepicker').datepicker();" data-dashlane-rid="d7a8a3434802ae4c" data-form-type="" data-kwimpalastatus="dead">
                         <span class="input-group-addon input-group-append border-left" onclick="$('.datepicker').datepicker();">
                           <span class="ti-calendar input-group-text"></span>
                         </span>
@@ -1125,12 +1093,12 @@
                     <div class="form-group">
                       <div class="input-group">
                         <div class="input-group-prepend"></div>
-                        <input name="tracking_number" type="number" placeholder="Tracking Number" class="form-control" aria-label="">
+                        <input name="tracking_number" type="number" placeholder="Tracking Number" class="form-control" aria-label="" data-dashlane-rid="4cacc976b7d00e72" data-form-type="">
                         <div class="input-group-append"></div>
                       </div>
                     </div>
-                    <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                    <button type="reset" class="btn btn-light">Cancel</button>
+                    <button type="submit" class="btn btn-primary mr-2" data-dashlane-rid="0c7d95ccdb91c8fb" data-form-type="" data-dashlane-label="true">Submit</button>
+                    <button type="reset" class="btn btn-danger" data-dashlane-rid="9588be7e165f4941" data-form-type="" data-dashlane-label="true">Cancel</button>
                   </form>
                 </div>
               </div>
@@ -1143,20 +1111,20 @@
     </div> <!-- page-body-wrapper ends -->
   </div> <!-- container-scroller -->
   <!-- plugins:js -->
-  <script src="{{url_for('static',filename='vendors/js/vendor.bundle.base.js')}}"></script> <!-- endinject -->
+  <script src="/static/vendors/js/vendor.bundle.base.js"></script> <!-- endinject -->
   <!-- Plugin js for this page -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/i18n/defaults-*.min.js"></script>
-  <script src="{{url_for('static',filename='vendors/bootstrap-datepicker/bootstrap-datepicker.min.js')}}"></script>
-  <script src="{{url_for('static',filename='vendors/chart.js/Chart.min.js')}}"></script> <!-- End plugin js for this page -->
+  <script src="/static/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+  <script src="/static/vendors/chart.js/Chart.min.js"></script> <!-- End plugin js for this page -->
   <!-- inject:js -->
-  <script src="{{url_for('static',filename='js/off-canvas.js')}}"></script>
-  <script src="{{url_for('static',filename='js/hoverable-collapse.js')}}"></script>
-  <script src="{{url_for('static',filename='js/template.js')}}"></script>
-  <script src="{{url_for('static',filename='js/settings.js')}}"></script>
-  <script src="{{url_for('static',filename='js/todolist.js')}}"></script> <!-- endinject -->
+  <script src="/static/js/off-canvas.js"></script>
+  <script src="/static/js/hoverable-collapse.js"></script>
+  <script src="/static/js/template.js"></script>
+  <script src="/static/js/settings.js"></script>
+  <script src="/static/js/todolist.js"></script> <!-- endinject -->
   <!-- Custom js for this page-->
-  <script src="{{url_for('static',filename='js/dashboard.js')}}"></script> <!-- End custom js for this page-->
-</body>
+  <script src="/static/js/dashboard.js"></script> <!-- End custom js for this page-->
 
-</html>
+
+</body><loom-container id="lo-engage-ext-container"><loom-shadow classname="resolved"></loom-shadow></loom-container><loom-container id="lo-companion-container"><loom-shadow classname="resolved"></loom-shadow></loom-container></html>
