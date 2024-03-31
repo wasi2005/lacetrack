@@ -1,0 +1,14 @@
+Click==7.0
+Flask
+Flask-Login
+Flask-SQLAlchemy
+gunicorn==19.9.0
+itsdangerous==1.1.0
+Jinja2
+MarkupSafe==1.1.1
+Werkzeug
+requests==2.23.0
+oauthlib==3.1.0
+pyOpenSSL==19.1.0
+packagetracker==1.0
+bs4==0.0.1

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<!-- Page title -->
+	<title>LaceTrack - Sneaker Inventory & Sales Tracker</title>
+
+	<!-- Page description -->
+	<meta name="description" content="">
+
+	<!-- Meta -->
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Favicon  -->
+	<link rel="icon" type="image/png" href="{{url_for('static',filename='images/logo.svg')}}">
+
+	<link rel="stylesheet" href="{{url_for('static',filename='css/style.min.css')}}">
+	<script src="{{ url_for('static',filename='js/modernizr.js') }}"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+	<style>
+		body {
+			background: #0e79e4;
+		}
+		.hero {
+			padding: 6rem 0 4rem 0;
+			background: linear-gradient(120deg, #232526 0%, #414345 100%);
+			color: #fff;
+			text-align: center;
+		}
+		.hero-title {
+			font-size: 3rem;
+			font-weight: 700;
+		}
+		.hero-desc {
+			font-size: 1.5rem;
+			margin-bottom: 2rem;
+		}
+		.cta-btn {
+			font-size: 1.25rem;
+			padding: 0.75rem 2rem;
+		}
+		.feature {
+			background: #fff;
+			border-radius: 1rem;
+			box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+			padding: 2rem;
+			margin-top: -3rem;
+		}
+	</style>
+</head>
+
+<body class="js-preload-me">
+
+	<div class="preloader js-preloader"><div class="preloader-animation"></div></div>
+
+	<div class="page js-page ">
+
+		<!-- Header -->
+		<div class="header header-over large">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3 col-sm-6 col-xs-5">
+
+						<!-- Logo Image -->
+						<a href="/" class="logo-image logo-animated"><img src="{{url_for('static',filename='images/logo.svg')}}" alt="logo"></a>
+						<!-- End of Logo Image -->
+
+						<!-- Languages -->
+						<div class="languages  js-languages">
+							<span class="language-active js-language-active">English <i class="fa fa-angle-down"></i></span>
+							<ul class="languages-list js-languages-list">
+								<li><a href="#">English</a></li>
+							</ul>
+						</div>
+						<!-- End of Languages -->
+
+					</div>
+					<div class="col-md-9 col-sm-6 col-xs-7">
+						<!-- Menu -->
+						<nav class="right helper">
+							<ul class="menu sf-menu js-menu">
+								{% if user.is_authenticated %}
+									<li><a href="/portal">Portal</a></li>
+									<li><a href="/logout">Logout</a></li>
+								{% else %}
+									<li><a href="/login">Login</a></li>
+								{% endif %}
+							</ul>
+						</nav>
+						<!-- End of Menu -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End of Header -->
+
+		<!-- Header Back -->
+		<div style="background-image:url({{url_for('static',filename='images/background.jpeg')}})" class="header-back header-back-default header-back-full-page js-full-page">
+			<div class="header-back-container">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<!-- Page Info -->
+							<div class="page-info helper center">
+
+								<style>
+									/* Fade Animation */
+									body {
+										-webkit-animation: fadein 2s;
+									}
+
+									@keyframes fadein {
+										from {
+											opacity: 0;
+										}
+
+										to {
+											opacity: 1;
+										}
+									}
+
+									/* Typewriter Animation */
+									.typewriter-text {
+										position: relative;
+										top: 50%;
+										margin: 0 auto;
+										border-right: 2px solid rgba(255, 255, 255, .75);
+										text-align: center;
+										white-space: nowrap;
+										overflow: hidden;
+										transform: translateY(-50%);
+									}
+
+									.slide-right {
+										-webkit-animation: slide-right 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+										animation: slide-right 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+									}
+
+									@-webkit-keyframes slide-right {
+										0% {
+											-webkit-transform: translateX(-100px);
+											transform: translateX(-100px);
+										}
+
+										100% {
+											-webkit-transform: translateX(0px);
+											transform: translateX(0px);
+										}
+									}
+
+									@keyframes slide-right {
+										0% {
+											-webkit-transform: translateX(-100px);
+											transform: translateX(-100px);
+										}
+
+										100% {
+											-webkit-transform: translateX(0px);
+											transform: translateX(0px);
+										}
+									}
+
+									.anim-typewriter-desc {
+										animation: typewriter 4s steps(49) 1s 1 normal both,
+											blinkTextCursor 500ms steps(49) infinite normal;
+									}
+
+									@keyframes typewriter {
+										from {
+											width: 0;
+										}
+
+										to {
+											width: 32em;
+										}
+									}
+
+									@keyframes blinkTextCursor {
+										from {
+											border-right-color: rgba(255, 255, 255, .75);
+										}
+
+										to {
+											border-right-color: transparent;
+										}
+									}
+								</style>
+								<h1 class="page-title slide-right">LaceTrack.</h1>
+								<h2 class="page-description typewriter-text anim-typewriter-desc">Revolutionizing sneaker sales one lace at a time.</h2>
+
+							</div>
+							<!-- End Page Info -->
+							{% if not user.is_authenticated %}
+							<div style="margin-top: 2em; max-width: 400px; margin-left: auto; margin-right: auto; background: rgba(255,255,255,0.95); padding: 2em; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+								<h3 style="text-align:center; margin-bottom: 1em;">Login</h3>
+								<form action="/login" method="post">
+									<div class="form-group">
+										<label for="username">Username</label>
+										<input type="text" class="form-control" id="username" name="username" required>
+									</div>
+									<div class="form-group">
+										<label for="password">Password</label>
+										<input type="password" class="form-control" id="password" name="password" required>
+									</div>
+									<button type="submit" class="btn btn-primary btn-block">Login</button>
+								</form>
+							</div>
+							{% endif %}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End of Header Back -->
+		<!-- Footer -->
+
+		<!-- End of Footer -->
+
+
+	</div>
+
+
+	<script src="{{url_for('static',filename='js/all.js')}}"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
